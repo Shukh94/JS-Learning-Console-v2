@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Level 1: Square Function",
+    "description": "Create function square(n) that returns n * n.",
+    "functionName": "square",
+    "difficulty": "easy",
+    "example": "Input: 2 → Output: 4",
+    "hint": "Multiply the number by itself.",
+    "tests": [
+      { "input": 2, "expected": 4 },
+      { "input": 5, "expected": 25 }
+    ]
+  },
+
+  {
+    "title": "Level 2: Double Function",
+    "description": "Create function double(n) that returns n + n.",
+    "functionName": "double",
+    "difficulty": "easy",
+    "example": "Input: 3 → Output: 6",
+    "hint": "Add the number to itself.",
+    "tests": [
+      { "input": 3, "expected": 6 },
+      { "input": 7, "expected": 14 }
+    ]
+  }
+]

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<title>JS Learning Console</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.css">
+
+</head>
+
+<body>
+
+<div class="console-wrapper">
+
+<!-- HEADER -->
+
+<header class="app-header">
+
+<div class="logo">
+JS Learning Console
+</div>
+
+<div class="header-right">
+
+<div class="xp-display">
+XP: <span id="xpValue">0</span>
+</div>
+
+<button id="themeBtn">Theme</button>
+
+</div>
+
+</header>
+
+<!-- PROGRESS -->
+
+<div class="progress-panel">
+
+<div class="progress-bar">
+<div id="progressFill"></div>
+</div>
+
+</div>
+
+<!-- PROJECT BAR -->
+
+<div class="project-bar">
+
+<select id="projectSelect"></select>
+
+<button id="newProjectBtn">New</button>
+
+<button id="deleteProjectBtn">Delete</button>
+
+</div>
+
+<!-- LEVEL MAP -->
+
+<div id="levelMap" class="level-map"></div>
+
+<!-- MAIN WORKSPACE -->
+
+<div class="workspace">
+
+<!-- LEFT PANEL : CHALLENGE -->
+
+<div class="problem-panel">
+
+<h3 id="challengeTitle"></h3>
+
+<div id="difficultyLabel"></div>
+
+<p id="challengeDesc"></p>
+
+<div class="example-box" id="exampleContainer">
+
+<strong>Example</strong>
+
+<div id="exampleBox"></div>
+
+</div>
+
+<div class="level-controls">
+
+<button id="prevLevel">Prev</button>
+
+<span id="levelIndicator"></span>
+
+<button id="nextLevel">Next</button>
+
+</div>
+
+</div>
+
+<!-- RESIZE HANDLE -->
+
+<div id="resizeHandle" class="resize-handle"></div>
+
+<!-- RIGHT PANEL : EDITOR -->
+
+<div class="editor-panel">
+
+<textarea id="codeArea"></textarea>
+
+<div id="editorDivider" class="editor-divider"></div>
+
+<!-- MAIN TOOLBAR -->
+
+<div class="toolbar main-toolbar">
+
+<div class="tool-group">
+
+<button id="modeBtn" class="mode-btn challenge-mode">
+Practice
+</button>
+
+<button id="runBtn">Run</button>
+
+<button id="formatBtn">Format</button>
+
+</div>
+
+<div class="tool-group">
+
+<button id="hintBtn">Hint</button>
+
+</div>
+
+<div class="tool-group">
+
+<span id="statusBadge" class="status ready">
+Ready
+</span>
+
+</div>
+
+</div>
+
+<!-- OUTPUT -->
+
+<div id="output" class="output-box"></div>
+
+<!-- FILE TOOLBAR -->
+
+<div class="toolbar file-toolbar">
+
+<div class="tool-group">
+
+<button id="copyBtn">Copy</button>
+<button id="clearBtn">Clear</button>
+<button id="resetBtn">Reset</button>
+
+</div>
+
+<div class="tool-group">
+
+<button id="shareBtn">Share</button>
+<button id="downloadBtn">Export</button>
+<button id="uploadBtn">Import</button>
+
+<input type="file"
+id="fileInput"
+accept=".js,.txt"
+hidden>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SCRIPTS -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/javascript-hint.min.js"></script>
+
+<script src="https://unpkg.com/prettier@2.8.8/standalone.js"></script>
+<script src="https://unpkg.com/prettier@2.8.8/parser-babel.js"></script>
+
+<script type="module" src="js/app.js"></script>
+
+</body>
+
+</html>
