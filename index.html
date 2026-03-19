@@ -10,16 +10,12 @@
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.css">
 
 </head>
 
 <body>
 
 <div class="console-wrapper">
-
-<!-- HEADER -->
 
 <header class="app-header">
 
@@ -29,9 +25,9 @@ JS Learning Console
 
 <div class="header-right">
 
-<div class="xp-display">
-XP: <span id="xpValue">0</span>
-</div>
+<span>XP: 0</span>
+
+<button id="modeBtn">Practice</button>
 
 <button id="themeBtn">Theme</button>
 
@@ -39,136 +35,38 @@ XP: <span id="xpValue">0</span>
 
 </header>
 
-<!-- PROGRESS -->
-
-<div class="progress-panel">
-
-<div class="progress-bar">
-<div id="progressFill"></div>
-</div>
-
-</div>
-
-<!-- PROJECT BAR -->
-
-<div class="project-bar">
-
-<select id="projectSelect"></select>
-
-<button id="newProjectBtn">New</button>
-
-<button id="deleteProjectBtn">Delete</button>
-
-</div>
-
-<!-- LEVEL MAP -->
-
-<div id="levelMap" class="level-map"></div>
-
-<!-- MAIN WORKSPACE -->
-
 <div class="workspace">
 
-<!-- LEFT PANEL : CHALLENGE -->
+<div class="sidebar"></div>
 
-<div class="problem-panel">
+<div class="main">
 
-<h3 id="challengeTitle"></h3>
-
-<div id="difficultyLabel"></div>
-
-<p id="challengeDesc"></p>
-
-<div class="example-box" id="exampleContainer">
-
-<strong>Example</strong>
-
-<div id="exampleBox"></div>
-
+<div class="editor-box">
+<textarea id="editor"></textarea>
 </div>
 
-<div class="level-controls">
-
-<button id="prevLevel">Prev</button>
-
-<span id="levelIndicator"></span>
-
-<button id="nextLevel">Next</button>
-
-</div>
-
-</div>
-
-<!-- RESIZE HANDLE -->
-
-<div id="resizeHandle" class="resize-handle"></div>
-
-<!-- RIGHT PANEL : EDITOR -->
-
-<div class="editor-panel">
-
-<textarea id="codeArea"></textarea>
-
-<div id="editorDivider" class="editor-divider"></div>
-
-<!-- MAIN TOOLBAR -->
-
-<div class="toolbar main-toolbar">
-
-<div class="tool-group">
-
-<button id="modeBtn" class="mode-btn challenge-mode">
-Practice
-</button>
+<div class="toolbar">
 
 <button id="runBtn">Run</button>
-
 <button id="formatBtn">Format</button>
-
-</div>
-
-<div class="tool-group">
-
 <button id="hintBtn">Hint</button>
 
-</div>
-
-<div class="tool-group">
-
-<span id="statusBadge" class="status ready">
-Ready
-</span>
+<span id="status">Ready</span>
 
 </div>
 
-</div>
+<div id="console" class="console"></div>
 
-<!-- OUTPUT -->
-
-<div id="output" class="output-box"></div>
-
-<!-- FILE TOOLBAR -->
-
-<div class="toolbar file-toolbar">
-
-<div class="tool-group">
+<div class="file-toolbar">
 
 <button id="copyBtn">Copy</button>
 <button id="clearBtn">Clear</button>
 <button id="resetBtn">Reset</button>
-
-</div>
-
-<div class="tool-group">
-
 <button id="shareBtn">Share</button>
-<button id="downloadBtn">Export</button>
-<button id="uploadBtn">Import</button>
+<button id="exportBtn">Export</button>
+<button id="importBtn">Import</button>
 
-<input type="file"
-id="fileInput"
-accept=".js,.txt"
-hidden>
+<input type="file" id="fileInput" hidden>
 
 </div>
 
@@ -177,21 +75,9 @@ hidden>
 </div>
 
 </div>
-
-</div>
-
-<!-- SCRIPTS -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/javascript-hint.min.js"></script>
-
-<script src="https://unpkg.com/prettier@2.8.8/standalone.js"></script>
-<script src="https://unpkg.com/prettier@2.8.8/parser-babel.js"></script>
 
 <script type="module" src="js/app.js"></script>
 

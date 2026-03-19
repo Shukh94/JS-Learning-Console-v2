@@ -1,9 +1,23 @@
-export function calculateXP(difficulty){
+export function addXP(state, amount){
 
-if(difficulty==="easy") return 10
-if(difficulty==="medium") return 20
-if(difficulty==="hard") return 40
+state.xp += amount
 
-return 10
+localStorage.setItem("xp", state.xp)
+
+document.getElementById("xpValue").innerText = state.xp
+
+}
+
+export function loadXP(state){
+
+const saved = localStorage.getItem("xp")
+
+if(saved){
+
+state.xp = parseInt(saved)
+
+}
+
+document.getElementById("xpValue").innerText = state.xp
 
 }

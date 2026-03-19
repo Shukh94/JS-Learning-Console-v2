@@ -1,29 +1,31 @@
-export function runTests(userFunc,tests){
+export function runTests(fn,tests){
 
 let passed=0
-
 let results=[]
 
-tests.forEach((t,i)=>{
+tests.forEach(t=>{
 
-const actual=userFunc(t.input)
+let r
 
-const ok=actual===t.expected
+try{
+r=fn(t.input)
+}catch{
+r="error"
+}
+
+const ok=r===t.expected
 
 if(ok) passed++
 
 results.push({
-index:i+1,
+input:t.input,
 expected:t.expected,
-actual,
+result:r,
 ok
 })
 
 })
 
-return{
-passed,
-results
-}
+return {passed,results}
 
 }

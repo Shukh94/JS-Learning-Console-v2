@@ -1,2 +1,0 @@
-# js-code-practice-console
-

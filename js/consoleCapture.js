@@ -1,53 +1,27 @@
-export function runUserCode(code){
+export function runCode(code){
 
-const logs = []
+let logs=[]
+
+const oldLog=console.log
+
+console.log=(...args)=>{
+
+logs.push(args.join(" "))
+
+}
 
 try{
 
-const fakeConsole = {
+new Function(code)()
 
-log: (...args)=>{
-logs.push({
-type:"log",
-text: args.join(" ")
-})
-},
+}catch(e){
 
-warn: (...args)=>{
-logs.push({
-type:"warn",
-text: args.join(" ")
-})
-},
-
-error: (...args)=>{
-logs.push({
-type:"error",
-text: args.join(" ")
-})
-}
+logs.push("Error: "+e.message)
 
 }
 
-const fn = new Function(
-"console",
-'"use strict";\n' + code
-)
+console.log=oldLog
 
-fn(fakeConsole)
-
-return {
-logs
-}
-
-}
-
-catch(e){
-
-return {
-error: e.message
-}
-
-}
+return logs
 
 }
